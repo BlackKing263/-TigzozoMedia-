@@ -1,0 +1,118 @@
+
+// variables
+:root{
+  --prime-color: #742296;
+  --body-color: #fcfcfc;
+  --text-color: #080808;
+  --secondary-text-color: #fcfcfc;
+  --side-nav: #f3e3fa;
+  --linear-gradient: linear-gradient(
+    to bottom, 
+    rgba(255,255,255, 0.271), 
+    rgb(255, 255, 255, 0.9)
+    );
+  --shadow: rgb(0 0 0 / 20%) 1px 6px 20px;
+}
+
+
+
+// variables
+
+// mixins
+@mixin transition-ease {
+  transition: all .5s ease-in-out;
+}
+@mixin flex-end {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin button-style {
+  border: 3px solid var(--prime-color);
+  background-color: var(--prime-color);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+  &:hover{
+      background-color: #fff;
+      color: var(--prime-color);
+  }
+}
+@mixin img-sizing {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;          
+}
+
+// @mixin LargeDevice {
+//   @media (min-width: 992px) and (max-width: 1199px)
+// }
+
+// @function set-text-color($color) {
+//   @if (lightness($color) > 40%) {
+//     @return #000;
+//   } @else {
+//     @return #fff;
+//   }
+// }
+
+
+
+
+
+
+
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+body {
+  line-height: 1;
+  overflow-x: hidden;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a{
+  text-decoration: none;
+}
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  overflow-x: hidden;
+}
+
+img, video{
+  width: 100%;
+  height: auto;
+}
+

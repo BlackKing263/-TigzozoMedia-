@@ -1,0 +1,197 @@
+body{
+   // height: 100vh;
+   background-color: var(--body-color);
+   font-family: 'Josefin Sans', sans-serif;
+   transition: color .5s ease;
+
+   nav{
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 6.35rem;
+      width: 100%;
+      z-index: 100;
+      background-color: var(--body-color);
+      box-shadow:var(--shadow);
+      // background-color: nav-color;
+
+      .nav-bar{
+         position: relative;
+         height: 100%;
+         max-width: 1200px;
+         width: 100%;
+         margin: 0 auto;
+         padding: 0 30px;
+         display: flex;
+         align-items: center;
+         justify-content: space-between;
+         
+
+         .sidebarOpen{
+            color: var(--text-color);
+            font-size: 25px;
+            padding: 5px;
+            cursor: pointer;
+            display: none;
+         }
+
+         // .logo{padding-top: 1%;}
+
+         .menu{
+            height: 100%;
+            display: flex;
+            align-items: center;
+
+            .logo-toggle{
+               display: none;
+            }
+
+            .nav-links{
+               height: 50%;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               margin: 0;
+
+               li{
+                  
+                  margin: auto 5px;
+
+                  a{
+                     position: relative;
+                     font-size: 18px;
+                     font-weight: 500;
+                     color: var(--text-color);
+                     text-decoration: none;
+                     padding: 10px;
+                     transition: all .3s ease;
+
+                     &:hover{
+                        color: var(--prime-color);
+                     }
+                     
+                  }
+
+               }
+            }
+         }
+         .darkLight-searchBox{
+            display: flex;
+            align-items: center;
+
+            .dark-light,
+            .searchBox{
+               height: 40px;
+               width: 40px;
+               border-radius: 50%;
+               @include flex-center;
+               background-color: var(--text-color);
+               margin: 0 5px;
+
+               span{
+                  position: absolute;
+                  color: var(--secondary-text-color);
+                  font-size: 22px;
+                  cursor: pointer;
+                  transition: all 0.3s ease;
+               }
+
+               .sun,
+               .cancel{
+                  opacity: 0;
+                  pointer-events: none;
+               }
+            }
+         }
+      }
+   }
+   
+   .dark-light.active span.sun{
+      opacity: 1 !important;
+      pointer-events: auto !important;
+   }
+
+   .dark-light.active span.moon{
+      opacity: 0;
+      pointer-events: none;
+   }
+
+}
+body.dark{
+   --prime-color: #742296;
+   --body-color: #010101;
+   --text-color: #fcfcfc;
+   --secondary-text-color: #010101;
+   --side-nav: #0f0f0f;
+   --linear-gradient: linear-gradient(
+    to bottom, 
+    rgba(3, 3, 3, 0.271), 
+    rgba(3, 3, 3, 0.9)
+    );
+   transition: all .5s ease-in-out;
+   --shadow: rgba(255, 255, 255, 0.2) 1px 6px 20px;
+}
+
+
+@media (max-width: 991px) {
+   .menu{
+      position: fixed;
+      height: 100%;
+      width: 320px;
+      left: -200%;
+      top: 0;
+      padding: 20px;
+      flex-direction: column;
+      background-color: var(--side-nav);
+      transition: all .4s ease;
+
+      .logo-toggle{
+         width: 100%;
+         display: flex !important;
+         align-items: center;
+         justify-content: space-between;
+
+         .sidebarClose{
+            color: var(--text-color);
+            font-size: 26px;
+            cursor: pointer;
+         }
+      }
+   }
+
+   nav{
+      .nav-bar{
+         background-color: var(--body-color);
+         .sidebarOpen{
+           display: block !important;
+         }
+      }
+   }
+
+   .active{
+      .menu{
+         left: 0;
+      }
+      .logo{opacity: 0;}
+   }
+
+   .nav-links{
+      flex-direction: column;
+      padding-top: 30px;
+
+      li{
+         text-align: center;
+         width: 100%;
+         &:hover{
+            background-color: #fcfcfc;
+         }
+
+         a{
+            display: block;
+         }
+      }
+   }
+}
+
+
+

@@ -1,0 +1,792 @@
+@import 'config';
+@import 'navigation';
+
+
+
+/*############################################################
+########################## Styling ##########################
+##############################################################*/
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    
+
+    section{
+        height: 100vh;
+        // margin: 0 50px;
+        // margin-bottom: 10%;
+        // max-width: 1300px;
+    }
+    h2{font-size: 1.5625rem; font-weight: 600; margin: 2rem; color: var(--text-color);}
+    p{font-size: 1.25rem; font-weight: 300; color: var(--text-color);}
+}
+
+   //?######### HOME #########
+  
+#home{
+    margin-top: 4.3rem;
+    .home-text{
+        h1{
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 2.98rem;
+        // padding-bottom: 1rem;
+        }
+        p{
+            color: var(--text-color);
+            font-weight: 400;
+            font-size: 1.3rem;
+            line-height: 1.6rem;
+            width: 85%;
+            margin-bottom: 1.8rem;
+        }
+        .home-btn{
+            @include button-style;
+            margin-right: 1.2rem;
+        }
+        
+        .home-links{
+            margin: 1.8rem 0;
+            a{
+                color: var(--text-color);
+                text-decoration: none;
+                margin-right: 1.2rem;
+                transition: color .5s ease;
+                &:hover{
+                    color: var(--prime-color);
+                }
+            }
+        }
+    
+
+    }
+    .home-inner{
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        .home-images{
+            height: 100%;
+            .home-img{
+                padding: 0 3px;
+                align-self: center;
+            }
+
+            .two{
+                margin-bottom: 7rem;
+                
+            }
+        }
+    }
+
+
+}
+
+#about{
+    height: 100vh;
+    margin-bottom: 6rem;
+    .about-inner{
+        .about-row{
+            justify-content: center;
+
+            .about-left{
+                p{
+                    width: 85%;
+                    margin-bottom: 1.5rem;
+                }
+
+                .abt-left-imgs{
+                    padding-left: 1rem;
+                }
+                .img-one{
+                    padding: 0 ;
+                }
+                .img-two{
+                    padding: 0;
+                    margin-top: 5.3rem;
+                }
+                
+            }
+            .about-right{
+                padding-left: 2rem;
+                p{
+                    width: 85%;
+                }
+                .img-three{
+                    padding-right: 12px;
+                    margin-bottom: 1.5rem;
+                    position: relative;
+
+                    .youtube-logo{
+                        position: absolute;
+                        top: 40%;
+                        left: 38%;
+                    }
+                }
+                .about-btn{
+                    @include button-style;
+                }
+
+            }
+        }
+    }
+}
+
+
+#services{
+    margin-bottom: 6rem;
+    .offers{
+        justify-content: center;
+        margin: 0;
+
+        .option{
+            object-fit: contain;
+            width: 30%;
+            position: relative;
+
+            .option-overlay{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--linear-gradient);
+                overflow: hidden;
+
+                .option-head{
+                    color: var(--text-color);
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    margin-top: 122%;
+                    text-align: center;
+                    @include transition-ease;
+                }
+                .service-list{
+                    display: none;
+                    @include transition-ease;
+                }
+                .option-icon{
+                    z-index: 2;
+                    width: 13.5%;
+                    height: 9%;
+                    bottom: 1.5%;
+                    left: 83.3%;
+                    position: relative;
+                    @include flex-center;
+                    background-color: var(--prime-color);
+                    cursor: pointer;
+
+                    i{
+                        position: absolute;
+                        color: #fff;
+                        font-size: 2rem;
+                    }
+
+                    .right{opacity: 1;}
+                    .close{opacity: 0;}
+                }
+
+                .active{
+                    .right{opacity: 0;}
+                    .close{
+                        opacity: 1;
+                        background-color: var(--prime-color);
+                        width: 65%;
+                        border-radius: 50%;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .service-list{
+                background: var(--prime-color);
+                padding: 1rem;
+                .option-icon{
+                    background-color: rgb(229, 229, 229);
+                    position: absolute;
+                    left: 86.5%;
+                    bottom: 0;
+                }
+                .option-head{
+                    margin-top: 2%;
+                    text-align: start;
+                    color: #fff;
+                    font-size: 1.55rem;
+                    margin-bottom: 1.5rem;
+                }
+                .service-list{
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+
+                    a{
+                        padding: .7rem 0;
+                        font-size: 1.25rem;
+                        color: #fff;
+                        width: fit-content;
+                        @include transition-ease;
+
+                        &:hover{
+                            text-decoration: underline;
+                            
+                        }
+                    }
+                }
+            }
+
+        
+
+        }
+    }
+}
+
+#testimonials{
+    .testimonials-inner{
+        justify-content: center;
+        
+        h2{
+            margin-top: 0;
+        }
+        h3{
+           font-size: 1.4rem;
+           font-weight: 600;
+           color: var(--text-color);
+        }
+        .sub-1,
+        .sub-2{
+            font-weight: 400;
+        }
+        
+        grid-template-columns: repeat(17, 1fr);
+
+        .testimonials-head{
+            grid-column: span 9;
+            column-gap: 1%;
+        }
+        .testimonial-img-1{
+            grid-column-start: 3;
+            grid-column-end: 9;
+            grid-row: span 2;
+        }
+        .title-1{
+            grid-column-start: 3;
+            grid-column-end: 8;
+        }
+        .sub-1{
+            grid-column-start: 3;
+            grid-column-end: 8;
+        }
+        .detail-1{
+            grid-column-start: 3;
+            grid-column-end: 8;
+        }
+        .testimonial-img-2{
+            grid-column-start: 10;
+            grid-column-end: 16;
+            grid-row-start: 1;
+            grid-row-end: 3;
+        }
+        .title-2{
+            grid-column-start: 10;
+            grid-column-end: 12;
+            grid-row: 3;
+        }
+        .sub-2{
+            grid-column-start: 10;
+            grid-row: 4;
+        }
+        .detail-2{
+            grid-column-start: 10;
+            grid-column-end: 15;
+            grid-row-start: 5;
+            grid-row-end: 7;
+        }
+
+    }
+
+
+}
+
+#gallery{
+    height: auto;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    text-align: center;
+
+    .gallery-head{
+        font-weight: bolder;
+        text-align: center;
+        font-size: 1.7rem;
+        text-shadow: -1px 1px 6px rgb(136, 136, 136);
+
+        .ig{
+            font-family: 'great vibes';
+            font-weight: 100;
+        }
+    }
+
+    .gallery-inner{
+        height: 70%;
+        align-items: center;
+
+        .g-img{
+            height: 100%;
+        }
+
+        .gallery-images{
+            object-fit: cover;
+            object-position: top center;
+            height: 400px;
+        }
+
+        .two{
+            margin-bottom: 3rem;
+        }
+        .one{
+            margin-top: 3rem;
+        }
+    }
+
+    .tag{
+        text-align: center;
+        margin: 1.375rem auto;
+        color: var(--text-color);
+    }
+
+    .btn{
+        @include button-style;
+    }
+}
+
+footer{
+    background: var(--prime-color);
+    margin: 0;
+    padding: 3rem 5rem;
+    .logo{
+        background-color: var(--body-color);
+        width: 8rem;
+    }
+    h5{
+        color: #fff;
+        text-decoration: underline;
+    }
+    p{color: #fff;}
+    a{
+        color: #fff;
+        @include transition-ease;
+
+        &:hover{
+            font-size: 2rem;
+        }
+    }
+    .footer-inner{
+        justify-content: center;
+    }
+    .foot{
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+        margin-bottom: 3rem;
+    }
+   
+}
+
+
+
+
+//?############################################################
+//?#################### Media Queries ########################
+//?############################################################
+
+@media (max-width: 1399px){
+    #services{
+        .offers{
+            .option{
+                .option-overlay{
+                    .option-head{
+                        font-size: 1.6rem;
+                    }
+                    .option-icon{
+                        bottom: 3%;
+                        left: 82.7%;
+                    }
+                }
+
+                .service-list{
+                    .option-icon{
+                        bottom: 0;
+                        left: 86.5%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//?#################### Large Device ########################
+
+@media (max-width:1199px){
+    
+    #home{
+        .img-four{
+            display: none;
+        }
+    }
+
+    #services{
+        .offers{
+            .option{
+                .option-overlay{
+                    .option-head{
+                        font-size: 1.3rem;
+                    }
+                    .option-icon{
+                        bottom: 5%;
+                        left: 82%;
+                    }
+                }
+
+                .service-list{
+                    
+                    .option-icon{
+                        bottom: 0;
+                        left: 86.5%;
+                    }
+                }
+            }
+        }
+    }
+
+    #testimonials{
+        .testimonials-inner{
+            h2{
+                margin-left: 0;
+            }
+            .testimonial-img-1,
+            .title-1,
+            .sub-1,
+            .detail-1{
+                grid-column-start: 2;
+            }
+            .testimonial-img-2,
+            .title-2,
+            .sub-2,
+            .detail-2{
+                grid-column-end: 17;
+            }
+            .testimonial-img-1{
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    #gallery{
+        .gallery-inner{
+            .gallery-images{
+                height: 296px;
+            }
+        }
+    }
+}
+
+
+//?#################### Medium Device ########################
+
+@media (max-width: 991px){
+   
+    #home{
+
+        .img-three{
+            display: none;
+        }
+    }
+
+    #about{
+        .about-inner{
+            .about-row{
+                .about-left{
+                    .text-one{width: 100%;}
+                }
+                .about-right{
+                    p{width: 100%;}
+
+                    .img-three{
+                        .youtube-logo{
+                            top: 37%;
+                            left: 31%;
+                        }
+                    }
+                   
+                }
+            }
+        }
+    }
+
+    #services{
+        height: auto;
+        .offers{
+            .option{
+                width: 50%;
+                margin-bottom: 1.25rem;
+                .option-overlay{
+                    .option-head{
+                        font-size: 1.6rem;
+                    }
+                    .option-icon{
+                        bottom: 3%;
+                        left: 82.7%;
+                    }
+                }
+
+                .service-list{
+                    .option-icon{
+                        bottom: 0;
+                        left: 86.5%;
+                    }
+
+                    a{
+                        padding: .5rem 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #testimonials{
+        height: auto;
+        .testimonials-inner{
+            .testimonials-head{
+                grid-column-start: 1;
+                grid-column-end: 18;
+            }
+            .testimonial-img-1,
+            .title-1,
+            .sub-1,
+            .detail-1{
+                grid-column-start: 1;
+                grid-column-end: 9;
+            }
+            .testimonial-img-1{
+                grid-row: 2;
+            }
+            .title-1{
+                grid-row: 3;
+            }
+
+            .testimonial-img-2,
+            .title-2,
+            .sub-2,
+            .detail-2{
+                grid-column-end: 18;
+            }
+            .testimonial-img-2{
+                grid-row-start: 2;
+            }
+        }
+    }
+
+    #gallery{
+        .gallery-inner{
+            .gallery-images{
+                height: 368px;
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+
+//?#################### small (Landscape) Device ########################
+
+@media (max-width: 767px){
+
+    #home{
+       
+        .img-two{
+            display: none;
+        }
+
+        .home-text{
+            // text-align: center;
+
+            h1{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.1rem;
+            }
+
+            
+        }
+    }
+
+    #about{
+        height: auto;
+       
+        .about-inner{
+            .about-row{
+                .about-left{
+                    padding: 0;
+                    margin-bottom: 1rem;
+                    .abt-left-imgs{
+                        padding-left: 0;
+                        .img-two{
+                            margin: 0;
+                            margin-left: 1rem;
+                        }
+                    }
+                }
+                .about-right{
+                    padding-left: 0;
+                    .img-three{
+                        display: none;
+                    }
+                    a{margin: 0 7%;}
+                }
+            }
+        }
+    }
+    
+    #services{
+        height: auto;
+        .offers{
+            .option{
+                width: 68%;
+                margin-bottom: 1.25rem;
+            }
+        }
+    }
+
+    #testimonials{
+       .testimonials-inner{
+            .testimonials-head{
+                margin-right: 0;
+            }
+            .testimonial-img-1,
+            .title-1,
+            .sub-1,
+            .detail-1{
+                
+                grid-column-end: 18;
+            }
+            .sub-1{
+                grid-row: 4;
+            }
+            .detail-1{
+                grid-row: 5;
+                margin-bottom: 2.5rem;
+            }
+            
+            .testimonial-img-2,
+            .title-2,
+            .sub-2,
+            .detail-2{
+                grid-column-start: 1;
+                grid-column-end: 18;
+            }
+            .testimonial-img-2{
+                grid-row: 6;
+                margin-bottom: 1rem;
+            }
+            .sub-2,
+            .title-2,
+            .sub-2,
+            .detail-2{
+                grid-row: inherit;
+            }
+       }
+    }
+
+    #gallery{
+        .gallery-inner{
+            .two{
+                margin-bottom: 1rem;
+            }
+            .one{
+                margin-top: 0;
+            }
+        }
+    }
+}
+
+
+
+//?#################### small Device ########################
+
+@media (max-width: 575px){
+
+    body{
+        .nav-bar{
+                background-color: rgba(240, 248, 255, 0);
+            }
+    }
+   
+    #home{
+        margin-top: 0;
+         .home-inner{
+            padding-top: 10%;
+            background: var(--linear-gradient),
+                url(/img/hero-img1.jpg);
+            @include img-sizing;
+            background-position: top;
+            background-attachment: fixed;
+         } 
+        
+        .home-images{
+            display: none;
+        }
+
+        .home-text{
+            text-align: center;
+
+            h1{
+                font-size: 2rem;
+            }
+            p{
+                font-size: 1.1rem;
+                margin: 1rem auto;
+            }
+        }
+
+        .home-btn{
+            margin: .5rem .5rem !important;
+        }
+    }
+
+    #about{
+        text-align: center;
+
+        .abt-left-imgs{
+            justify-content: center;
+        }
+    }
+
+    #services{
+        text-align: center;
+    }
+
+    #testimonials{
+        text-align: center;
+    }
+
+    footer{
+        text-align: center;
+        .logo{
+            margin: 0 auto;
+            width: 12rem;
+        }
+    }
+
+    
+}
+
+//?#################### xsmall Device ########################
+
+@media (max-width:488px){
+    #services{
+        .offers{
+            .option{
+                width: 86%;
+            }
+        }
+    }
+}
